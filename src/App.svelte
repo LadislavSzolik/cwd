@@ -3,6 +3,7 @@
 
   function signUpEarlyAccess(e) {
     let formData = new FormData(e.target);
+    formData.set("form-name", "earlyaccess")
     fetch("/", {
       method: "POST",
       headers: {"Content-Type": "application/x-www-form-urlencoded"},
@@ -14,6 +15,7 @@
 
   function signUpNewsletter(e) {
     let formData = new FormData(e.target);
+    formData.set("form-name", "newsletters")
     fetch("/", {
       method: "POST",
       headers: {"Content-Type": "application/x-www-form-urlencoded"},
@@ -67,7 +69,6 @@
               method="POST"
               data-netlify-honeypot="bot-field"
         >
-            <input type="hidden" name="form-name" value="earlyaccess"/>
             <input type="email" placeholder="Your email" name="email" required/>
             <button type="submit">I am in!</button>
         </form>
@@ -83,7 +84,6 @@
               data-netlify="true"
               data-netlify-honeypot="bot-field"
         >
-            <input type="hidden" name="form-name" value="newsletters"/>
             <input type="email" placeholder="Your email" name="email" required/>
             <button type="submit">Send me only updates</button>
         </form>
